@@ -4,7 +4,7 @@
 
 Este repositório contém a implementação do desafio proposto no curso "Formação Desenvolvedor Moderno" do [DevSuperior](https://devsuperior.com.br). O objetivo é criar um sistema para calcular o valor total de um pedido, considerando um desconto percentual e o valor do frete.
 
-## Requisitos do sistema
+## 📌 Regras de Negócio
 
 O sistema deve seguir as seguintes regras de negócio:
 
