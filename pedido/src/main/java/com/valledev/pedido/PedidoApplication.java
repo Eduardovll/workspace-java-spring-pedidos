@@ -1,5 +1,8 @@
 package com.valledev.pedido;
 
+import com.valledev.pedido.entities.Order;
+import com.valledev.pedido.services.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,8 +14,14 @@ public class PedidoApplication implements CommandLineRunner {
 		SpringApplication.run(PedidoApplication.class, args);
 	}
 
+	@Autowired
+	private OrderService orderService;
+
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello World");
+		Order order = new Order(777, 95.90, 00.0);
+
+		System.out.println("Pedido código: " + order.getCode() + "\nValor total: R$ "
+				+ String.format("%.2f", orderService.calculateTotal(order)));
 	}
 }
