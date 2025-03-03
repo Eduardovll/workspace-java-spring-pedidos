@@ -19,9 +19,18 @@ public class PedidoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Order order = new Order(777, 95.90, 00.0);
 
-		System.out.println("Pedido código: " + order.getCode() + "\nValor total: R$ "
-				+ String.format("%.2f", orderService.calculateTotal(order)));
+		Order order1 = new Order(1034, 150.00, 20.0);
+		Order order2 = new Order(2282, 800.00, 10.0);
+		Order order3 = new Order(1309, 95.90, 00.0);
+
+		System.out.println("Pedido código: " + order1.getCode() + "\nValor total: R$ "
+				+ String.format("%.2f", orderService.calculateTotal(order1)) + "\n");
+
+		System.out.println("Pedido código: " + order2.getCode() + "\nValor total: R$ "
+				+ String.format("%.2f", orderService.calculateTotal(order2))+ "\n");
+
+		System.out.println("Pedido código: " + order3.getCode() + "\nValor total: R$ "
+				+ String.format("%.2f", orderService.calculateTotal(order3))+ "\n");
 	}
 }
