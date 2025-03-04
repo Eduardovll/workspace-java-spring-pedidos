@@ -11,11 +11,11 @@ public class OrderService {
     private ShippingService shippingService;
 
     @Autowired
-    private EventCalculateService eventCalculateService;
+    private DiscountService discountService;
 
     public double calculateTotal(Order order) {
 
-        return (order.getBasic() - eventCalculateService.calculateDiscount(order.getBasic(), order.getDiscount()))
+        return (order.getBasic() - discountService.applyDiscount(order.getBasic(), order.getDiscount()))
                 + shippingService.shipment(order.getBasic());
     }
 }
